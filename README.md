@@ -5,6 +5,8 @@
 ### 参考
 - Gdrive: https://drive.google.com/drive/u/0/folders/1mSxXyqf8PX5YR-F2Y5jBvrA5ELSLqVbT
 - ref: https://github.com/kazeburo/private-isu-challenge
+- ChatGPT
+- ISUCON本
 
 ### git clone
 ```
