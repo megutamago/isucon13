@@ -27,7 +27,8 @@ git clone https://github.com/megutamago/isucon13.git
 - CI設定(GithubへIPアドレス登録、シェル修正)
     - OS情報をスマートに取得(シェル実行)
     - netdata, alp, pprof, pt-query-digest インストール
-    - mysql, nginx設定
+    - mysql, nginx ログ設定
+    - env.ymlの"git_repo" 適宜修正
 - ポートフォワーディング
 - ボトルネック測定
 - 修正方針、コード修正
