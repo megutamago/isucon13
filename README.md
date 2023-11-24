@@ -32,9 +32,9 @@ tar zcvfp /tmp/webapp.tar.gz /home/isucon/private_isu/webapp
 mysqldump -u isuconp isuconp | gzip > /tmp/isuconp.dump.sql.gz 
 
 # scp
-scp ubuntu@x.x.x.x:/tmp/webapp.tar.gz ./
-scp ubuntu@x.x.x.x:/tmp/isuconp.dump.sql.gz ./
-scp ubuntu@x.x.x.x:/etc/nginx/nginx.conf ./
+scp isu1:/tmp/webapp.tar.gz ./
+scp isu1:/tmp/isuconp.dump.sql.gz ./
+scp isu1:/etc/nginx/nginx.conf ./
 
 # remove
 rm -f /tmp/webapp.tar.gz
