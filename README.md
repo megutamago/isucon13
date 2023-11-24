@@ -8,6 +8,7 @@ git clone https://github.com/megutamago/isucon13.git
 
 ## はじめにやること
 
+- マニュアルと起動手順把握。アプリの中身把握
 - VM複製
 - SSH設定
 - OS情報収集
