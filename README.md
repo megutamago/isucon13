@@ -48,8 +48,9 @@ rm -f /tmp/isuconp.dump.sql.gz
 # profile
 sudo curl -o cpu.pprof http://localhost:6060/debug/pprof/profile?seconds=60
 sudo go tool pprof -http localhost:1080 cpu.pprof
-ssh -fN -L 0.0.0.0:1080:localhost:1080 isu1
-http://192.168.11.21:1080/
+ssh -N -L 0.0.0.0:1080:localhost:1080 isu1
+http://localhost:1080/
+#http://192.168.11.21:1080/
 ```
 
 ---
@@ -83,16 +84,18 @@ rm -rf ../test-private_isu/home/
 
 ### ssh port foward
 ```
-ssh -fN -L 0.0.0.0:19999:localhost:19999 isu1  # netdata
-ssh -fN -L 0.0.0.0:1080:localhost:1080 isu1  # pprof
-ssh -fN -L 0.0.0.0:8080:localhost:8080 isu1  # grafana
-ssh -fN -L 0.0.0.0:9100:localhost:9100 isu1  # node_exporter
-ssh -fN -L 0.0.0.0:3100:localhost:3100 isu1  # fluent-bit
-ps aux | grep ssh
+ssh -N -L 0.0.0.0:19999:localhost:19999 isu1  # netdata
+ssh -N -L 0.0.0.0:1080:localhost:1080 isu1  # pprof
+ssh -N -L 0.0.0.0:8080:localhost:8080 isu1  # grafana
+ssh -N -L 0.0.0.0:9100:localhost:9100 isu1  # node_exporter
+ssh -N -L 0.0.0.0:3100:localhost:3100 isu1  # fluent-bit
 
-# pprof
-curl http://127.0.0.1:1080/
-webAccess: http://192.168.11.21:1080/
+# Case of background
+ssh -fN -L 0.0.0.0:19999:localhost:19999 isu1  # netdata
+
+# access
+http://localhost:1080/
+#http://192.168.11.21:1080/
 
 # wipe ps
 kill $(ps aux | grep 'ssh -fN -L 0.0.0.0:19999:localhost:19999 isu1' | grep -v grep | awk '{print $2}')
