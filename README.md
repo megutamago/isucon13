@@ -17,7 +17,6 @@ git clone https://github.com/megutamago/isucon13.git
 
 
 ## 競技開始直後のムーブ
-
 - マニュアルと起動手順、アプリの確認
 - VM複製(念のため)
 - SSH設定
@@ -54,6 +53,7 @@ git clone https://github.com/megutamago/isucon13.git
 6. ベンチマークを回す
 
 <br>
+
 
 # ISUCON Commands
 
