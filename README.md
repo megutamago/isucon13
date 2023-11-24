@@ -1,23 +1,57 @@
 # isucon13
 
+# 目標： isuconの基本的なフローを実践したい。最初から最後まで！初期スコアを超える！
+
+### 参考
+- Gdrive: https://drive.google.com/drive/u/0/folders/1mSxXyqf8PX5YR-F2Y5jBvrA5ELSLqVbT
+- ref: https://github.com/kazeburo/private-isu-challenge
+
 ### git clone
 ```
 git config --global url.https://megutamago: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@github.com/.insteadOf https://github.com/
 git clone https://github.com/megutamago/isucon13.git
 ```
 
-## はじめにやること
+### 作業サーバ
+- CloudFormationでいつでも再構築できるので、一人一台で作業できる
 
-- マニュアルと起動手順把握。アプリの中身把握
-- VM複製
+
+## 競技開始直後のムーブ
+
+- マニュアルと起動手順、アプリの確認
+- VM複製(念のため)
 - SSH設定
-- OS情報収集
-- webappのダウンロード、gitへアップ
-- netdata, alp, pprof, pt-query-digest インストール
-- ポートフォワーディング
-- CI設定(GithubへIPアドレス登録、シェル修正)
-- ボトルネック測定
+- アプリの言語をgoに設定する
+- Webブラウザでアプリの起動を確認する
 - 開発環境整備(デバッグツールなど)
+- webappのダウンロード、gitへアップ
+- CI設定(GithubへIPアドレス登録、シェル修正)
+    - OS情報をスマートに取得(シェル実行)
+    - netdata, alp, pprof, pt-query-digest インストール
+    - mysql, nginx設定
+- ポートフォワーディング
+- ボトルネック測定
+- 修正方針、コード修正
+
+## isucon PDCA
+1. アクセスログとデータベースのログを取得
+    - nginx
+    - alp
+    - mysql
+    - app (pprof)
+2. サーバのメトリクスを取得する
+    - ベンチマーク実行中のtopコマンドでサーバのリソース使用状況を見る
+    - netdata導入してメトリクス見るもよし
+3. ボトルネックのAPIを特定する
+4. 遅い原因を特定する
+    - クエリが遅いのか
+        - クエリの実行回数
+        - クエリの実行時間
+    - アプリが遅いのか
+        - cpu
+        - memory
+5. コード修正を反映する（Githubからデプロイまでを自動化したい）
+6. ベンチマークを回す
 
 <br>
 
