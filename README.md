@@ -14,13 +14,13 @@ git clone https://github.com/megutamago/isucon13.git
 - webappのダウンロード、gitへアップ
 - netdata, alp, pprof, pt-query-digest インストール
 - ポートフォワーディング
-- CI設定
+- CI設定(GithubへIPアドレス登録、シェル修正)
 - ボトルネック測定
 - 開発環境整備(デバッグツールなど)
 
-# ISUCON Commands
-
 <br>
+
+# ISUCON Commands
 
 ### shell
 ```
