@@ -29,7 +29,7 @@
 
 - name: Copy
   copy:
-    src: "{{ home_dir }}/prac-ansible-isu-templete/webapp"
+    src: "{{ home_dir }}/{{ git_repo }}/webapp"
     dest: "{{ home_dir }}/{{ isu_dir_name }}/"
     owner: isucon
     group: isucon
@@ -38,7 +38,7 @@
 
 - name: remove
   file: 
-    path: "{{ home_dir }}/prac-ansible-isu-templete"
+    path: "{{ home_dir }}/{{ git_repo }}"
     state: absent
 
 ### Execute as login shell
