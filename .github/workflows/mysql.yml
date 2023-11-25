@@ -1,25 +1,26 @@
-name: 'Pprof'
+name: 'Mysql'
 on:
   #push:
   #  branches:
   #    - main
   workflow_dispatch:
 jobs:
-  Pprof:
-    name: "Pprof Job"
+  Mysql:
+    name: "Mysql Job"
+    needs: Bench
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Exe
+      - name: Exe pt-query-digest
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: ${{ vars.PPROF }}
+          host: ${{ vars.MYSQL }}
           username: isucon
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            sleep 7
-            sudo curl -o cpu.pprof http://localhost:6060/debug/pprof/profile?seconds=60
+            sudo sed -i '/^INSERT INTO `posts`/d' /var/log/mysql/mysql-slow.sql
+            sudo pt-query-digest /var/log/mysql/mysql-slow.sql
