@@ -7,7 +7,6 @@ on:
 jobs:
   Alp:
     name: "Alp Job"
-    needs: Bench
     runs-on: ubuntu-latest
     permissions:
       contents: read
