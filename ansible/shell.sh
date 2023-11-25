@@ -1,12 +1,12 @@
 #!/bin/bash
-set -eu
+set -eux
 
 git pull
 
 # sql init
-mysql -u isucon -pisucon isupipe -e "DROP DATABASE isupipe"
-mysql -u isucon -pisucon isupipe -e "CREATE DATABASE isupipe"
-cat webapp/sql/initdb.d/10_schema.sql | sudo mysql isupipe
+sudo mysql -u isucon -pisucon -e "DROP DATABASE IF EXISTS isupipe"
+sudo mysql -u isucon -pisucon -e "CREATE DATABASE IF NOT EXISTS isupipe"
+sudo cat ~/webapp/sql/initdb.d/10_schema.sql | sudo mysql isupipe
 ~/webapp/sql/init.sh
 
 # app init
