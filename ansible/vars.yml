@@ -1,10 +1,9 @@
 var:
   isu1:
     tasks:
-      - isu/isu_pre.yml
       - isu/isu1.yml
-      - isu/isu_add.yml
-      - isu/delve.yml
+      #- isu/isu_add.yml
+      #- isu/delve.yml
     other:
       - common/common.yml
       #- monitoring/fluent-bit.yml
