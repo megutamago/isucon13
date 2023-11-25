@@ -12,6 +12,20 @@
 ```
 git config --global url.https://megutamago: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@github.com/.insteadOf https://github.com/
 git clone https://github.com/megutamago/isucon13.git
+
+root@ope1:~/work/ansible/isucon/isucon13# cat ~/.gitconfig 
+[user]
+        name = megutamago
+        email = naoya05280708@gmail.com
+[credential]
+        helper = store
+
+isucon@ip-192-168-0-11:~$ cat .gitignore 
+/*
+!/webapp
+!/ansible
+!/README.md
+!/.github
 ```
 
 ### 作業サーバ
