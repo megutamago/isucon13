@@ -1,7 +1,9 @@
-- name: Git checkout
-  git:
-    repo: "https://github.com/{{ git_user }}/{{ git_repo }}.git"
-    dest: "{{ home_dir }}/{{ git_repo }}"
+# - name: Git checkout
+#   git:
+#     repo: "https://github.com/{{ git_user }}/{{ git_repo }}.git"
+#     dest: "{{ home_dir }}/{{ git_repo }}"
+- name: git
+  shell: git clone https://github.com/megutamago/isucon13.git
 
 # bk
 - name: Copy
