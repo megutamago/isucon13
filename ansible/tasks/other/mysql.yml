@@ -12,7 +12,7 @@
 
 - name: set
   lineinfile:
-    dest: /etc/systemd/system/mysql.service
+    dest: /lib/systemd/system/mysql.service
     backrefs: true
     insertafter: EOF
     regexp: '^#?\s*LimitNOFILE='
@@ -25,15 +25,15 @@
     state: absent
 
 - name: shell
-  shell: mysql -u root -pisuconp -e "CREATE USER 'isuconp'@'%' IDENTIFIED BY 'isuconp';"
+  shell: mysql -u root -pisucon -e "CREATE USER 'isuconp'@'%' IDENTIFIED BY 'isuconp';"
   ignore_errors: yes
 
 - name: shell
-  shell: mysql -u root -pisuconp -e "GRANT ALL PRIVILEGES ON *.* TO 'isuconp'@'%' WITH GRANT OPTION;"
+  shell: mysql -u root -pisucon -e "GRANT ALL PRIVILEGES ON *.* TO 'isuconp'@'%' WITH GRANT OPTION;"
   ignore_errors: yes
 
 - name: shell
-  shell: mysql -u root -pisuconp -e "flush privileges;"
+  shell: mysql -u root -pisucon -e "flush privileges;"
   ignore_errors: yes
 
 - name: mysql is restarted
