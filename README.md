@@ -27,7 +27,7 @@ isucon@ip-192-168-0-11:~$ cat .gitignore
 !/README.md
 !/.github
 
-test
+testtest
 ```
 
 ### 作業サーバ
